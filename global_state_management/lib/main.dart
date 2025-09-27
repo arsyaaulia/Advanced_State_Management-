@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+// Ambil package
 import 'package:global_state_package/global_state_package.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 
@@ -15,9 +17,10 @@ void main() {
 class CounterApp extends StatelessWidget {
   const CounterApp({super.key});
 
+  // buat tampilan allert dialog update/ganti nama counter/label
   void _showEditLabelDialog(BuildContext context, GlobalState globalState, int index) {
     final TextEditingController _controller = TextEditingController(text: globalState.counters[index].label);
-
+    
     showDialog(
       context: context,
       builder: (BuildContext dialogContext) {
@@ -75,6 +78,7 @@ class CounterApp extends StatelessWidget {
     );
   }
 
+  // Buat tampilan 'Dashboard' counter app nya
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -93,6 +97,8 @@ class CounterApp extends StatelessWidget {
                 ),
               );
             }
+
+            //
             return ReorderableListView(
               onReorder:(oldIndex, newIndex) {
                 globalState.reorderCounters(oldIndex, newIndex);
@@ -185,6 +191,7 @@ class CounterApp extends StatelessWidget {
           },
           child: const Icon(Icons.add),
         ),
+
       ),
     );
   }
