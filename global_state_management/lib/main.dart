@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-// Ambil package
+// Ambil package di folder global_state_package
 import 'package:global_state_package/global_state_package.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 
